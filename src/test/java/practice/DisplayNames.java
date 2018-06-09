@@ -4,23 +4,23 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("A special test case")
-class DisplayNameDemo {
+class DisplayNames {
 
     @Test
     @DisplayName("Custom test name containing spaces")
-    void testWithDisplayNameContainingSpaces() {
+    void スペースを含んだ名前() {
 
     }
 
     @Test
     @DisplayName("╯°□°）╯")
-    void testWithDisplayNameContainingSpecialCharacters() {
+    void 特殊文字を含んだ名前() {
 
     }
 
     @Test
     @DisplayName("\uD83D\uDE31")
-    void testWithDisplayNameContainingEmoji() {
+    void 絵文字を含んだ名前() {
 
     }
 }

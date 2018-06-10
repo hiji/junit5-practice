@@ -2,19 +2,52 @@ package practice.assertions;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GroupedAssertion {
 
     @Test
     void groupedAssertions() {
+        Person person = new Person("John", "Doe");
         // 通常は検証が失敗した時点でテスト失敗になるが、
         // グループにすると、そのグループ内の検証は全て実行される。
-        Person person = new Person("John", "Doe");
         assertAll("person",
                 () -> assertEquals("John", person.getFirstName()),
                 () -> assertEquals("Doe", person.getLastName())
+        );
+    }
+
+    @Test
+    void dependentAssertions() {
+        Person person = new Person(null, null);
+        // グループの1つとして渡すラムダ式の中で、さらに複数の検証もできる。
+        // その中では通常と同じで、assertAllを使わなければ先に失敗すると後続の検証は実行されない。
+        assertAll("properties",
+                () -> {
+                    String firstName = person.getFirstName();
+
+                    // この検証が失敗すると、後続のassertAllは実行されじ、このブロックでの検証は終了する。
+                    // ただ、propertiesグループの検証としては継続され、次の検証に移る。
+                    assertNotNull(firstName);
+
+                    //
+                    assertAll("first name",
+                            () -> assertTrue(firstName.startsWith("J")),
+                            () -> assertTrue(firstName.endsWith("n"))
+                    );
+                },
+                () -> {
+                    String lastName = person.getLastName();
+
+                    assertNotNull(lastName);
+
+                    assertAll("last name",
+                            () -> assertTrue(lastName.startsWith("D")),
+                            () -> assertTrue(lastName.endsWith("e"))
+                    );
+                }
         );
     }
 

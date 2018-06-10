@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("TestInfo Parameter")
-public class TestInfoParameter {
+class TestInfoParameter {
 
-    public TestInfoParameter(TestInfo testInfo) {
+    TestInfoParameter(TestInfo testInfo) {
         // コンストラクタでテストに関する情報を取得できる
         // 環境情報やクラス単位のテスト情報を取得したりできそうだが、使いどころが難しそう
         assertEquals("TestInfo Parameter", testInfo.getDisplayName());

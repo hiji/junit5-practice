@@ -12,3 +12,15 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task testClassTagFiltering(type: Test) {
+    useJUnitPlatform {
+        includeTags 'fast'
+    }
+}
+
+task testTagFiltering(type: Test) {
+    useJUnitPlatform {
+        includeTags 'feature-add'
+    }
+}

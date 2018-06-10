@@ -1,4 +1,4 @@
-package practice.DisablingTests;
+package practice;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

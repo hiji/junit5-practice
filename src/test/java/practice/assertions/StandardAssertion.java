@@ -10,9 +10,12 @@ class StandardAssertion {
     void standardAssertions() {
         assertEquals(2, 2);
 
-        assertEquals(4, 4, "検証失敗時のメッセージ");
+        // 検証失敗時のメッセージを設定することができる
+        assertEquals(4, 4, "エラーメッセージ");
 
-        Message Message = new Message("検証失敗時に評価（遅延評価）されるエラーメッセージ");
+        // ラムダ式で検証失敗時のエラーメッセージを設定することができる。
+        // そうすることで、検証失敗時まで評価を遅延させることができる。
+        Message Message = new Message("エラーメッセージ");
         assertEquals(6, 6, Message::getMessage);
     }
 

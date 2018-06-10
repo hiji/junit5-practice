@@ -22,7 +22,7 @@ class GroupedAssertion {
     @Test
     void dependentAssertions() {
         Person person = new Person(null, null);
-        // グループの1つとして渡すラムダ式の中で、さらに複数の検証もできる。
+        // グループの要素として渡すラムダ式の中で、さらに複数の検証もできる。
         // その中では通常と同じで、assertAllを使わなければ先に失敗すると後続の検証は実行されない。
         assertAll("properties",
                 () -> {

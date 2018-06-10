@@ -13,17 +13,23 @@ class NestedTests {
 
     Stack<Object> stack;
 
+    @BeforeEach
+    void init() {
+        stack = new Stack<>();
+        stack.push("an element");
+    }
+
     @Test
-    void isInstantiatedWithNew() {
-        new Stack<>();
+    void isOneElement() {
+        assertEquals(stack.size(), 1);
     }
 
     @Nested
-    class WhenNew {
+    class WhenEmpty {
 
         @BeforeEach
-        void createNewStack() {
-            stack = new Stack<>();
+        void clearStack() {
+            stack.pop();
         }
 
         @Test

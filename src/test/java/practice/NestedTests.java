@@ -30,7 +30,7 @@ class NestedTests {
 
         @BeforeEach
         void clearStack() {
-            // WhenEmptyのテストで追加で実行される前処理
+            // WhenEmptyのテストにおいて、追加で実行される前処理
             stack.pop();
         }
 
@@ -56,7 +56,7 @@ class NestedTests {
 
             @BeforeEach
             void pushAnElement() {
-                // AfterPushingのテストで追加で実行される前処理
+                // AfterPushingのテストにおいて、追加で実行される前処理
                 stack.push(anElement);
             }
 

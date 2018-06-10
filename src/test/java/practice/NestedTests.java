@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NestedTests {
 
-    Stack<Object> stack;
+    private Stack<Object> stack;
 
     @BeforeEach
     void init() {

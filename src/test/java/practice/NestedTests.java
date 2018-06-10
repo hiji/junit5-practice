@@ -15,6 +15,7 @@ class NestedTests {
 
     @BeforeEach
     void init() {
+        // どのテストケースでも最初に実行される前処理
         stack = new Stack<>();
         stack.push("an element");
     }
@@ -29,6 +30,7 @@ class NestedTests {
 
         @BeforeEach
         void clearStack() {
+            // WhenEmptyのテストで追加で実行される前処理
             stack.pop();
         }
 
@@ -54,6 +56,7 @@ class NestedTests {
 
             @BeforeEach
             void pushAnElement() {
+                // AfterPushingのテストで追加で実行される前処理
                 stack.push(anElement);
             }
 

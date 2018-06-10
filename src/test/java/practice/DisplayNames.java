@@ -8,19 +8,19 @@ class DisplayNames {
 
     @Test
     @DisplayName("Custom test name containing spaces")
-    void スペースを含んだ名前() {
+    void スペースを含んだテストケース名() {
 
     }
 
     @Test
     @DisplayName("╯°□°）╯")
-    void 特殊文字を含んだ名前() {
+    void 特殊文字を含んだテストケース名() {
 
     }
 
     @Test
     @DisplayName("\uD83D\uDE31")
-    void 絵文字を含んだ名前() {
+    void 絵文字を含んだテストケース名() {
 
     }
 }

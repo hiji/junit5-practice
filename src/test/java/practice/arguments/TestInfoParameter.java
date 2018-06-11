@@ -1,4 +1,4 @@
-package practice.parameters;
+package practice.arguments;
 
 import org.junit.jupiter.api.*;
 

@@ -1,11 +1,11 @@
-package practice.parameters.extensions;
+package practice.arguments.extensions;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static practice.parameters.extensions.RandomParametersExtension.Random;
+import static practice.arguments.extensions.RandomParametersExtension.Random;
 
 @ExtendWith(RandomParametersExtension.class)
 class RandomParametersTest {

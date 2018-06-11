@@ -10,7 +10,7 @@
  *
  * http://www.eclipse.org/legal/epl-v20.html
  */
-package practice.parameters.extensions;
+package practice.arguments.extensions;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;

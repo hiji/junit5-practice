@@ -2,8 +2,7 @@ package practice.assertions;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ExceptionTesting {
 
@@ -23,4 +22,11 @@ class ExceptionTesting {
         assertEquals("例外だよ", exception.getMessage());
     }
 
+    @Test
+    void notThrowTesting() {
+        // どんな例外も投げられないことを検証する
+        assertDoesNotThrow(() -> {
+            assertEquals(1, 1);
+        });
+    }
 }

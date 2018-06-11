@@ -9,6 +9,14 @@ class ExceptionTesting {
 
     @Test
     void exceptionTesting() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            throw new IllegalArgumentException("例外だよ");
+        });
+    }
+
+    @Test
+    void exceptionTestingWithProperty() {
+        // 例外を取得して、詳細な検証をすることができる
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
             throw new IllegalArgumentException("例外だよ");
         });
